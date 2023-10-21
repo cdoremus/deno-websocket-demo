@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run -A --unstable main.ts"
+    "dev": "deno run --allow-net=0.0.0.0:8000 --allow-read=./index.html main.ts"
   },
   "imports": {
     "$std/": "https://deno.land/std@0.204.0/"
