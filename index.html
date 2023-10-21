@@ -10,12 +10,15 @@
   <p>Sends a ping every five seconds</p>
   <div id="output"></div>
   <script>
-    const wsUri = "ws://127.0.0.1/";
+    const wsUri = "ws://127.0.0.1:8000/";
     const output = document.querySelector("#output");
     const websocket = new WebSocket(wsUri);
     let pingInterval;
 
-    function writeToScreen(message) {
+    function writeToScreen(message, error) {
+      if (error) {
+        console.error("Error: ", error)
+      }
       output.insertAdjacentHTML("afterbegin", `<p>${message}</p>`);
     }
 
@@ -42,7 +45,7 @@
     };
 
     websocket.onerror = (e) => {
-      writeToScreen(`ERROR: ${e.data}`);
+      writeToScreen(`ERROR: ${e.message}`, e);
     };
   </script>
 </body>
