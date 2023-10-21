@@ -6,6 +6,8 @@ This is based on MDN Deno Websocket example: https://developer.mozilla.org/en-US
 
 Instead, I used port 8000. And changed the `port` value in the `Deno.serve` call in `main.ts` and added `:8000` to the `wsUri` value in `index.html`.
 
+The app works by opening a websocket connection when the `index,html` file is rendered and sending a message with the string `ping` every 5 seconds. When the server receives the message, it immediately response with the string `pong`. This ping-pong message exchange continues to happen every 5 seconds until the browser window is closed.
+
 To run this example use this command line:
 
 ```sh
