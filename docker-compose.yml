@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: deno-websocket-app
+    image: deno-websocket-image
+    environment:
+      - DENO_DEPLOYMENT_ID=${DENO_DEPLOYMENT_ID}
+    ports:
+      - "8000:8000"
+      - "8080:8080"

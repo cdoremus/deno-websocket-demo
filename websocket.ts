@@ -1,6 +1,6 @@
 Deno.serve({
   port: 8080,
-  handler: async (request) => {
+  handler: (request) => {
     // If the request is a websocket upgrade,
     // we need to use the Deno.upgradeWebSocket helper
     if (request.headers.get("upgrade") === "websocket") {
