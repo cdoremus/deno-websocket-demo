@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net=0.0.0.0:8000 --allow-read=./index.html main.ts",
+    "dev": "deno run --allow-env=IS_PROD --allow-net=0.0.0.0:8080 --allow-read=./index.html main.ts",
     "ws": "deno run --allow-net=0.0.0.0:8080 websocket.ts"
   },
   "imports": {
