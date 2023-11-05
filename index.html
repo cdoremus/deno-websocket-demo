@@ -11,7 +11,8 @@
   <div id="output"></div>
   <script>
     const port = 80;
-    const wsUri = `ws://127.0.0.1:${port}/ws`;
+    const host = "deno-websocket-demo.deno.dev"
+    const wsUri = `ws://${host}:${port}/ws`;
     const output = document.querySelector("#output");
     const websocket = new WebSocket(wsUri);
     let pingInterval;

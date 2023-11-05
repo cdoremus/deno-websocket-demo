@@ -4,6 +4,7 @@ Deno.serve({
     const { pathname } = new URL(request.url);
     // If the request is a websocket upgrade,
     if (pathname.includes("/ws")) {
+      console.log("WEBSOCKET REQUEST");
       // we need to use the Deno.upgradeWebSocket helper
       if (request.headers.get("upgrade") === "websocket") {
         const { socket, response } = Deno.upgradeWebSocket(request);
@@ -28,6 +29,7 @@ Deno.serve({
     } else {
       // If the request is a normal HTTP request,
       // we serve the client HTML file.
+      console.log("WEBSERVER REQUEST");
       const file = await Deno.open("./index.html", { read: true });
       return new Response(file.readable);
     }
