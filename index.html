@@ -11,7 +11,7 @@
   <div id="output"></div>
   <script>
     const port = 80;
-    const host = "deno-websocket-demo.deno.dev"
+    const host = "127.0.0.1";
     const wsUri = `wss://${host}:${port}/ws`;
     const output = document.querySelector("#output");
     const websocket = new WebSocket(wsUri);
